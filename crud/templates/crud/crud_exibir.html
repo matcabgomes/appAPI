@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+    rel="stylesheet" type="text/css"> 
+
+    <link href="{% static 'css/style.css' %}"rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    {% for pessoa in pessoas %}
+
+        <div class="container-fluid">
+            <div class="section">
+                <div class="container" id="show">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1>{{pessoa.name}}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h2>Dados Pessoais</h2>
+                        </div>
+                        <div class="panel-body">
+                            <p><span class="negrit">Nome :</span>{{pessoa.name}}</p>
+                            <p><span class="negrit">CPF :</span>{{pessoa.cpf}}</p>
+                            <p><span class="negrit">Cidade :</span>{{pessoa.city}}</p>
+                            <p><span class="negrit">E-mail :</span>{{pessoa.email}}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% empty %}
+     <div class="alert alert-danger">
+         <h2>Você ainda não cadastrou nehuma informação!!</h2>
+     </div>
+    {% endfor %}
+
+</body>
+</html>

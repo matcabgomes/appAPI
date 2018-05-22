@@ -1,0 +1,5 @@
+Neste aquivo costumam ficar:
+
+- A pasta com os css
+- A pasta com os js
+- Imagens e Arquivos da pagina
